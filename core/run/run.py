@@ -33,7 +33,7 @@ class Run:
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
-        self.wdb = False
+        self.wdb = True
 
         if self.wdb:
             self.logrun = wandb.init(
@@ -176,7 +176,7 @@ class Run:
             grad_dict, hess_dict = self.compute_grads_hess_from_loss(
                 model=self.learner.network,
                 loss=loss,
-                spcnt=50
+                spcnt=30
             )
 
             if self.wdb:
