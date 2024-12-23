@@ -26,6 +26,10 @@ class Run:
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.task = tasks[task]()
         self.task_name = task
+        # for a in networks:
+        #     if 'tanh' in a:
+        #         print(a) 
+        # print(networks)
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)

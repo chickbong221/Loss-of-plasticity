@@ -40,50 +40,50 @@ import torch
 import numpy as np
 
 
-tasks = {
-    "weight_utils": UtilityTask,
-    "feature_utils": UtilityTask,
+# tasks = {
+#     "weight_utils": UtilityTask,
+#     "feature_utils": UtilityTask,
     
-    "input_permuted_mnist": InputPermutedMNIST,
-    "input_permuted_mnist_restarts": InputPermutedMNISTRestarts,
+#     "input_permuted_mnist": InputPermutedMNIST,
+#     "input_permuted_mnist_restarts": InputPermutedMNISTRestarts,
 
-    "label_permuted_emnist" : LabelPermutedEMNIST,
-    "label_permuted_emnist_offline" : LabelPermutedMNISTOffline,
-    "label_permuted_cifar10" : LabelPermutedCIFAR10,
-    "label_permuted_mini_imagenet" : LabelPermutedMiniImageNet,
+#     "label_permuted_emnist" : LabelPermutedEMNIST,
+#     "label_permuted_emnist_offline" : LabelPermutedMNISTOffline,
+#     "label_permuted_cifar10" : LabelPermutedCIFAR10,
+#     "label_permuted_mini_imagenet" : LabelPermutedMiniImageNet,
 
-    "input_permuted_mnist_stats": InputPermutedMNIST,
-    "label_permuted_emnist_stats" : LabelPermutedEMNIST,
-    "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
-    "label_permuted_mini_imagenet_stats" : LabelPermutedMiniImageNet,
+#     "input_permuted_mnist_stats": InputPermutedMNIST,
+#     "label_permuted_emnist_stats" : LabelPermutedEMNIST,
+#     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
+#     "label_permuted_mini_imagenet_stats" : LabelPermutedMiniImageNet,
 
-}
+# }
 
-networks = {
-    "linear_layer": LinearLayer,
-    "fully_connected_leakyrelu": FullyConnectedLeakyReLU,
-    "small_fully_connected_leakyrelu": SmallFullyConnectedLeakyReLU,
-    "fully_connected_leakyrelu_gates": FullyConnectedLeakyReLUGates,
-    "fully_connected_relu": FullyConnectedReLU,
-    "small_fully_connected_relu": SmallFullyConnectedReLU,
-    "fully_connected_relu_gates": FullyConnectedReLUGates,
-    "fully_connected_tanh": FullyConnectedTanh,
-    "small_fully_connected_tanh": SmallFullyConnectedTanh,
-    "fully_connected_tanh_gates": FullyConnectedTanhGates,
-    "fully_connected_sigmoid": FullyConnectedSigmoid,
-    "small_fully_connected_sigmoid": SmallFullyConnectedSigmoid,
-    "fully_connected_sigmoid_gates": FullyConnectedSigmoidGates,
-    "fully_connected_linear": FullyConnectedLinear,
-    "fully_connected_linear_gates": FullyConnectedLinearGates,
-    "small_fully_connected_linear": SmallFullyConnectedLinear,
-    "small_fully_connected_tanh_gates": SmallFullyConnectedTanhGates,
-    "small_fully_connected_leakyrelu_gates": SmallFullyConnectedLeakyReLUGates,
-    "small_fully_connected_relu_gates": SmallFullyConnectedReLUGates,
-    "small_fully_connected_linear_gates": SmallFullyConnectedLinearGates,
-    "convolutional_network_relu": ConvolutionalNetworkReLU,
-    "fully_connected_relu_with_hooks": FullyConnectedReLUWithHooks,
-    "convolutional_network_relu_with_hooks": ConvolutionalNetworkReLUWithHooks,
-}
+# networks = {
+#     "fully_connected_sigmoid": FullyConnectedSigmoid,
+    # "linear_layer": LinearLayer,
+    # "fully_connected_leakyrelu": FullyConnectedLeakyReLU,
+    # "small_fully_connected_leakyrelu": SmallFullyConnectedLeakyReLU,
+    # "fully_connected_leakyrelu_gates": FullyConnectedLeakyReLUGates,
+    # "fully_connected_relu": FullyConnectedReLU,
+    # "small_fully_connected_relu": SmallFullyConnectedReLU,
+    # "fully_connected_relu_gates": FullyConnectedReLUGates,
+    # "fully_connected_tanh": FullyConnectedTanh,
+    # "small_fully_connected_tanh": SmallFullyConnectedTanh,
+    # "fully_connected_tanh_gates": FullyConnectedTanhGates,
+    # "small_fully_connected_sigmoid": SmallFullyConnectedSigmoid,
+    # "fully_connected_sigmoid_gates": FullyConnectedSigmoidGates,
+    # "fully_connected_linear": FullyConnectedLinear,
+    # "fully_connected_linear_gates": FullyConnectedLinearGates,
+    # "small_fully_connected_linear": SmallFullyConnectedLinear,
+    # "small_fully_connected_tanh_gates": SmallFullyConnectedTanhGates,
+    # "small_fully_connected_leakyrelu_gates": SmallFullyConnectedLeakyReLUGates,
+    # "small_fully_connected_relu_gates": SmallFullyConnectedReLUGates,
+    # "small_fully_connected_linear_gates": SmallFullyConnectedLinearGates,
+    # "convolutional_network_relu": ConvolutionalNetworkReLU,
+    # "fully_connected_relu_with_hooks": FullyConnectedReLUWithHooks,
+    # "convolutional_network_relu_with_hooks": ConvolutionalNetworkReLUWithHooks,
+# }
 
 learners = {
     "sgd": SGDLearner,
