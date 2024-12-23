@@ -29,14 +29,14 @@ class Run:
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
-        self.wdb = True
+        self.wdb = False
 
         if self.wdb:
             self.logrun = wandb.init(
                 project="UPDG",
                 entity="letuanhf-hanoi-university-of-science-and-technology",
                 config=args, 
-                name=f"{self.learner}",
+                name=f"{self.learner}-{network}",
                 force=True
             )
             
@@ -159,6 +159,8 @@ class Run:
             optimizer.zero_grad()
             output = self.learner.predict(input)
             loss = criterion(output, target)
+            if self.wdb:
+                self.logrun.log({"loss": loss}, step=i)
 
             # Compute and log parameter norms
             param_norm_dict = self.compute_param_norms(self.learner.network)
@@ -180,12 +182,12 @@ class Run:
             # Compute and log activation norms per layer
             activation_norm_dict = self.compute_activation_norms(self.learner.network, input)
             if self.wdb:
-                self.logrun.log({f"activation_norms/{k}": v for k, v in activation_norm_dict.items()}, step=i)
+                self.logrun.log({f"Layer_outputs/{k}": v for k, v in activation_norm_dict.items()}, step=i)
 
             # Compute and log combined activation norms
             all_activation_norm = self.compute_all_activation_outputs_norms(self.learner.network, input)
             if self.wdb:
-                self.logrun.log({"activation_norms/all_activation_norm": all_activation_norm}, step=i)
+                self.logrun.log({"Layer_outputs/all_output": all_activation_norm}, step=i)
 
             # Backpropagation
             if self.learner.extend:
@@ -201,26 +203,28 @@ class Run:
             losses_per_step_size.append(loss.item())
             if self.task.criterion == 'cross_entropy':
                 accuracy_per_step_size.append((output.argmax(dim=1) == target).float().mean().item())
+                if self.wdb:
+                    self.logrun.log({"accuracy": (output.argmax(dim=1) == target).float().mean().item()}, step=i)
 
-        if self.task.criterion == 'cross_entropy':
-            self.logger.log(losses=losses_per_step_size,
-                            accuracies=accuracy_per_step_size,
-                            task=self.task_name, 
-                            learner=self.learner.name,
-                            network=self.learner.network.name,
-                            optimizer_hps=self.learner.optim_kwargs,
-                            n_samples=self.n_samples,
-                            seed=self.seed,
-            )
-        else:
-            self.logger.log(losses=losses_per_step_size,
-                            task=self.task_name,
-                            learner=self.learner.name,
-                            network=self.learner.network.name,
-                            optimizer_hps=self.learner.optim_kwargs,
-                            n_samples=self.n_samples,
-                            seed=self.seed,
-            )
+        # if self.task.criterion == 'cross_entropy':
+        #     self.logger.log(losses=losses_per_step_size,
+        #                     accuracies=accuracy_per_step_size,
+        #                     task=self.task_name, 
+        #                     learner=self.learner.name,
+        #                     network=self.learner.network.name,
+        #                     optimizer_hps=self.learner.optim_kwargs,
+        #                     n_samples=self.n_samples,
+        #                     seed=self.seed,
+        #     )
+        # else:
+        #     self.logger.log(losses=losses_per_step_size,
+        #                     task=self.task_name,
+        #                     learner=self.learner.name,
+        #                     network=self.learner.network.name,
+        #                     optimizer_hps=self.learner.optim_kwargs,
+        #                     n_samples=self.n_samples,
+        #                     seed=self.seed,
+            # )
 
 
 if __name__ == "__main__":

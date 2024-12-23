@@ -10,6 +10,7 @@ from core.network.fcn_leakyrelu import FullyConnectedLeakyReLU, SmallFullyConnec
 from core.network.fcn_relu import FullyConnectedReLU, SmallFullyConnectedReLU, FullyConnectedReLUGates, SmallFullyConnectedReLUGates, ConvolutionalNetworkReLU, FullyConnectedReLUWithHooks, ConvolutionalNetworkReLUWithHooks
 from core.network.fcn_tanh import FullyConnectedTanh, SmallFullyConnectedTanh, FullyConnectedTanhGates, SmallFullyConnectedTanhGates
 from core.network.fcn_linear import FullyConnectedLinear, FullyConnectedLinearGates, LinearLayer, SmallFullyConnectedLinear, SmallFullyConnectedLinearGates
+from core.network.fcn_sigmoid import FullyConnectedSigmoid, FullyConnectedSigmoidGates, SigmoidLayer, SmallFullyConnectedSigmoid, SmallFullyConnectedSigmoidGates
 
 from core.learner.sgd import SGDLearner, SGDLearnerWithHesScale
 from core.learner.pgd import PGDLearner
@@ -69,6 +70,9 @@ networks = {
     "fully_connected_tanh": FullyConnectedTanh,
     "small_fully_connected_tanh": SmallFullyConnectedTanh,
     "fully_connected_tanh_gates": FullyConnectedTanhGates,
+    "fully_connected_sigmoid": FullyConnectedSigmoid,
+    "small_fully_connected_sigmoid": SmallFullyConnectedSigmoid,
+    "fully_connected_sigmoid_gates": FullyConnectedSigmoidGates,
     "fully_connected_linear": FullyConnectedLinear,
     "fully_connected_linear_gates": FullyConnectedLinearGates,
     "small_fully_connected_linear": SmallFullyConnectedLinear,
