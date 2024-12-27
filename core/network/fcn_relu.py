@@ -122,8 +122,6 @@ class SmallFullyConnectedReLU(nn.Sequential):
     def __str__(self):
         return self.name
 
-
-
 class ConvolutionalNetworkReLU(nn.Sequential):
     def __init__(self, n_obs=4, n_outputs=10):
         super(ConvolutionalNetworkReLU, self).__init__()

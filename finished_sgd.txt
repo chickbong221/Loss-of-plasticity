@@ -1,0 +1,4 @@
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network fully_connected_relu --n_samples 1000000 time_elapsed: 40517.867988586426 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_relu --n_samples 1000000 time_elapsed: 44760.163665771484 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network fully_connected_tanh --n_samples 1000000 time_elapsed: 41831.86489653587 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh --n_samples 1000000 time_elapsed: 46632.3165166378 

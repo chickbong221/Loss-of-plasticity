@@ -1,8 +1,8 @@
 import torch, sys, os
+sys.path.insert(1, os.getcwd())
 from core.utils import tasks, networks, learners, criterions
 from core.logger import Logger
 from backpack import backpack, extend
-sys.path.insert(1, os.getcwd())
 from HesScale.hesscale import HesScale
 from core.network.gate import GateLayer, GateLayerGrad
 import signal
@@ -33,7 +33,7 @@ class Run:
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
-        self.wdb = True
+        self.wdb = False
 
         if self.wdb:
             self.logrun = wandb.init(

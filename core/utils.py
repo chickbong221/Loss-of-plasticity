@@ -56,7 +56,6 @@ tasks = {
     "label_permuted_emnist_stats" : LabelPermutedEMNIST,
     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
     "label_permuted_mini_imagenet_stats" : LabelPermutedMiniImageNet,
-
 }
 
 networks = {

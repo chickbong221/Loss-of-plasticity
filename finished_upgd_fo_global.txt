@@ -1,0 +1,2 @@
+python3 core/run/run.py --task input_permuted_mnist --learner upgd_fo_global --seed 0 --lr 0.001 --beta_utility 0.9999 --sigma 0.01 --weight_decay 0.01 --network fully_connected_relu --n_samples 1000000 time_elapsed: 45667.456362485886 
+python3 core/run/run.py --task input_permuted_mnist --learner upgd_fo_global --seed 0 --lr 0.001 --beta_utility 0.9999 --sigma 0.01 --weight_decay 0.01 --network fully_connected_tanh --n_samples 1000000 time_elapsed: 47071.916103839874 
