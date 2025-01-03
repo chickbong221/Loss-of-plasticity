@@ -126,12 +126,12 @@ class ConvolutionalNetworkReLU(nn.Sequential):
     def __init__(self, n_obs=4, n_outputs=10):
         super(ConvolutionalNetworkReLU, self).__init__()
         self.name = "convolutional_network_relu"
-        self.add_module("conv_1", nn.Conv2d(in_channels=3, out_channels=6, kernel_size=5))
+        self.add_module("conv_1", nn.Conv2d(in_channels=1, out_channels=6, kernel_size=5))
         self.add_module("pool_1", nn.MaxPool2d(kernel_size=2, stride=2))
         self.add_module("conv_2", nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5))
         self.add_module("pool_2", nn.MaxPool2d(kernel_size=2, stride=2))
         self.add_module("flatten", nn.Flatten())
-        self.add_module("linear_1", nn.Linear(in_features=16 * 5 * 5, out_features=120))
+        self.add_module("linear_1", nn.Linear(in_features=256, out_features=120))
         self.add_module("act_1", nn.ReLU())
         self.add_module("linear_2", nn.Linear(in_features=120, out_features=84))
         self.add_module("act_2", nn.ReLU())

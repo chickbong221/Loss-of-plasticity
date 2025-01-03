@@ -1,0 +1,14 @@
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_sigmoid --n_samples 1000000 time_elapsed: 75887.89144873619 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_sigmoid --n_samples 1000000 time_elapsed: 76766.03694462776 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_sigmoid --n_samples 1000000 time_elapsed: 46331.58363556862 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_sigmoid --n_samples 1000000 time_elapsed: 46842.82503056526 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_sigmoid_gates --n_samples 1000000 time_elapsed: 75862.02552843094 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_sigmoid_gates --n_samples 1000000 time_elapsed: 75757.8160302639 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_sigmoid_gates --n_samples 1000000 time_elapsed: 69019.98092961311 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_sigmoid_gates --n_samples 1000000 time_elapsed: 69058.96246051788 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_leakyrelu --n_samples 1000000 time_elapsed: 61174.35587096214 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_leakyrelu --n_samples 1000000 time_elapsed: 61064.664016246796 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_leakyrelu --n_samples 1000000 time_elapsed: 38436.76259994507 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_leakyrelu --n_samples 1000000 time_elapsed: 38498.868815898895 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 76400.9186475277 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 75992.26447224617 

@@ -1,0 +1,419 @@
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 174, in start
+    self.learner.set_task(self.task)
+  File "/workspace/upgd/core/learner/learner.py", line 26, in set_task
+    self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 293, in resnet8_crelu
+    return ResNet(BasicBlock, [1, 1, 1], num_classes=n_outputs, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 212, in __init__
+    nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='crelu')
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/init.py", line 429, in kaiming_normal_
+    gain = calculate_gain(nonlinearity, a)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/init.py", line 119, in calculate_gain
+    raise ValueError("Unsupported nonlinearity {}".format(nonlinearity))
+ValueError: Unsupported nonlinearity crelu
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 174, in start
+    self.learner.set_task(self.task)
+  File "/workspace/upgd/core/learner/learner.py", line 26, in set_task
+    self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 293, in resnet8_crelu
+    return ResNet(BasicBlock, [1, 1, 1], num_classes=n_outputs, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 212, in __init__
+    nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='crelu')
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/init.py", line 429, in kaiming_normal_
+    gain = calculate_gain(nonlinearity, a)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/init.py", line 119, in calculate_gain
+    raise ValueError("Unsupported nonlinearity {}".format(nonlinearity))
+ValueError: Unsupported nonlinearity crelu
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 75, in forward
+    out += identity
+RuntimeError: The size of tensor a (64) must match the size of tensor b (128) at non-singleton dimension 1
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 261, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 253, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 6, 6] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 271, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 263, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_crelu.py", line 65, in forward
+    out = self.conv1(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, weight of size [64, 64, 3, 3], expected input[1, 128, 7, 7] to have 64 channels, but got 128 channels instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_leakyrelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 174, in start
+    self.learner.set_task(self.task)
+  File "/workspace/upgd/core/learner/learner.py", line 26, in set_task
+    self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
+  File "/workspace/upgd/core/network/resnet_leakyrelu.py", line 284, in resnet8_leakyrelu
+    return ResNet(BasicBlock, [1, 1, 1], num_classes=n_outputs, **kwargs)
+  File "/workspace/upgd/core/network/resnet_leakyrelu.py", line 203, in __init__
+    nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='leakyrelu')
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/init.py", line 429, in kaiming_normal_
+    gain = calculate_gain(nonlinearity, a)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/init.py", line 119, in calculate_gain
+    raise ValueError("Unsupported nonlinearity {}".format(nonlinearity))
+ValueError: Unsupported nonlinearity leakyrelu
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 174, in start
+    self.learner.set_task(self.task)
+  File "/workspace/upgd/core/learner/learner.py", line 26, in set_task
+    self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 284, in resnet8_sigmoid
+    return ResNet(BasicBlock, [1, 1, 1], num_classes=n_outputs, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 176, in __init__
+    self.sigmoid = nn.Sigmoid(inplace=True)
+TypeError: __init__() got an unexpected keyword argument 'inplace'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 174, in start
+    self.learner.set_task(self.task)
+  File "/workspace/upgd/core/learner/learner.py", line 26, in set_task
+    self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 284, in resnet8_sigmoid
+    return ResNet(BasicBlock, [1, 1, 1], num_classes=n_outputs, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 176, in __init__
+    self.sigmoid = nn.Sigmoid(inplace=True)
+TypeError: __init__() got an unexpected keyword argument 'inplace'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 174, in start
+    self.learner.set_task(self.task)
+  File "/workspace/upgd/core/learner/learner.py", line 26, in set_task
+    self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 284, in resnet8_sigmoid
+    return ResNet(BasicBlock, [1, 1, 1], num_classes=n_outputs, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 180, in __init__
+    self.layers.extend(self._make_layer(block, 64, layers[0], has_bn=has_bn and (bn_block_num > 0)))
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 237, in _make_layer
+    self.base_width, previous_dilation, norm_layer, has_bn))
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 44, in __init__
+    self.sigmoid = nn.Sigmoid(inplace=True)
+TypeError: __init__() got an unexpected keyword argument 'inplace'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 262, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 249, in _forward_impl
+    x = self.sigmoid(x)
+TypeError: __init__() takes 1 positional argument but 2 were given
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 262, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 249, in _forward_impl
+    x = self.sigmoid(x)
+TypeError: __init__() takes 1 positional argument but 2 were given
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 262, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 254, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 58, in forward
+    out = self.sigmoid(out)
+TypeError: __init__() takes 1 positional argument but 2 were given
+ 
+
+python3 core/run/run.py --task input_permuted_mnist_convolution --learner adam --seed 0 --lr 0.001 --network resnet8_sigmoid --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 262, in forward
+    return self._forward_impl(x)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 254, in _forward_impl
+    x = layer(x)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/upgd/core/network/resnet_sigmoid.py", line 58, in forward
+    out = self.sigmoid(out)
+TypeError: __init__() takes 1 positional argument but 2 were given
+ 
+

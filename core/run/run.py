@@ -26,37 +26,35 @@ class Run:
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.task = tasks[task]()
         self.task_name = task
-        # for a in networks:
-        #     if 'tanh' in a:
-        #         print(a) 
-        # print(networks)
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
-        self.wdb = False
+        self.args = args
+        self.wdb = True
+        if 'weight_decay' in self.args:
+            self.name = f"{self.learner}-{network}-weight_decay"
+        else: 
+            self.name = f"{self.learner}-{network}"
 
         if self.wdb:
             self.logrun = wandb.init(
                 project="UPDG",
                 entity="letuanhf-hanoi-university-of-science-and-technology",
-                config=args, 
-                name=f"{self.learner}-{network}",
+                config=self.args, 
+                name=self.name,
                 force=True
             )
-            
-    def compute_param_norms(self, model):
-        # Norm-2 của tất cả các tham số trong mô hình (scalar)
-        global_norm = torch.sqrt(sum(p.norm(2) ** 2 for p in model.parameters())).item()
 
-        # Norm-2 cho từng lớp (tensor với một giá trị cho mỗi lớp)
+    def compute_param_norms(self, model):
+        global_norm = torch.sqrt(sum(p.norm(2) ** 2 for p in model.parameters())).item()
         layer_norms = {}
-        for i, layer in enumerate(model.children()):
-            layer_params = list(layer.parameters())
-            if layer_params:  # Bỏ qua các lớp không có tham số
-                layer_norm = torch.sqrt(sum(p.norm(2) ** 2 for p in layer_params))
-                layer_norms[f'layer_{i}_param'] = layer_norm.item()
+
+        for name, param in model.named_parameters():
+            if param.norm(2).item() != 0:
+                layer_norms[name] = param.norm(2).item()  # Tính norm-2 của từng tham số
 
         return {"global_param_norm": global_norm, **layer_norms}
+
 
     def compute_grads_hess_from_loss(self, model, loss, spcnt=10):
         global_grad_norm = 0.0
@@ -91,6 +89,35 @@ class Run:
 
         # Return dictionary
         return {"global_grad_norm": global_grad_norm, **layer_grad_norms}, {"global_hess_norm": global_hess_norm, **layer_hess_norms }
+
+    def compute_weight_over_grad_norms(self, model, loss):
+        global_weight_grad_norm = torch.tensor(0.0).to(self.device)
+        layer_weight_grad_norms = {}
+
+        params = [p for p in model.parameters() if p.requires_grad]
+        param_names = [name for name, _ in model.named_parameters()]
+
+        grads = grad(loss, params, retain_graph=True, create_graph=True)
+
+        # Tính ||w/g|| và norm-2 cho từng lớp
+        for name, p, g in zip(param_names, params, grads):
+            if g.norm(2).item() != 0:
+                weight_grad_ratio = p / g  
+                weight_grad_norm = weight_grad_ratio.norm(2)
+            else:
+                weight_grad_norm = 0  
+
+            # Lưu norm-2 cho từng tham số
+            layer_weight_grad_norms[name] = weight_grad_norm.item() 
+
+            # Cộng dồn vào norm-2 toàn cục
+            global_weight_grad_norm += weight_grad_norm ** 2
+
+        # Tính norm-2 toàn cục
+        global_weight_grad_norm = torch.sqrt(global_weight_grad_norm).item()
+
+        return {"global_weight_over_grad_norm": global_weight_grad_norm, **layer_weight_grad_norms}
+
 
     def compute_activation_norms(self, model, input):
         activation_norms = {}
@@ -178,15 +205,23 @@ class Run:
                 loss=loss,
                 spcnt=30
             )
-
             if self.wdb:
                 self.logrun.log({f"Gradient/{k}": v for k, v in grad_dict.items()}, step=i)
                 self.logrun.log({f"Hessian/{k}": v for k, v in hess_dict.items()}, step=i)
+
+            weight_over_grad_dict = self.compute_weight_over_grad_norms(
+                model=self.learner.network,
+                loss=loss
+            )
+            if self.wdb:
+                self.logrun.log({f"Weight_over_grad/{k}": v for k, v in weight_over_grad_dict.items()}, step=i)
+
 
             # Compute and log activation norms per layer
             activation_norm_dict = self.compute_activation_norms(self.learner.network, input)
             if self.wdb:
                 self.logrun.log({f"Layer_outputs/{k}": v for k, v in activation_norm_dict.items()}, step=i)
+
 
             # Compute and log combined activation norms
             all_activation_norm = self.compute_all_activation_outputs_norms(self.learner.network, input)
