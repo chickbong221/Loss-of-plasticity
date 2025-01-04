@@ -105,7 +105,7 @@ class Run:
                 weight_grad_ratio = p / g  
                 weight_grad_norm = weight_grad_ratio.norm(2)
             else:
-                weight_grad_norm = 0  
+                weight_grad_norm = [0]  
 
             # Lưu norm-2 cho từng tham số
             layer_weight_grad_norms[name] = weight_grad_norm.item() 

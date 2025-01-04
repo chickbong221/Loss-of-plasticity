@@ -13,3 +13,5 @@ python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 
 python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_leakyrelu --n_samples 1000000 time_elapsed: 38249.075202703476 
 python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network small_fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 60901.63724517822 
 python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 76986.68988108635 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network fully_connected_tanh --n_samples 1000000 time_elapsed: 52748.06597852707 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 68025.8755877018 

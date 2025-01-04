@@ -417,3 +417,80 @@ Traceback (most recent call last):
 TypeError: __init__() takes 1 positional argument but 2 were given
  
 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
