@@ -494,3 +494,371 @@ Traceback (most recent call last):
 AttributeError: 'int' object has no attribute 'item'
  
 
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'int' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_tanh --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_crelu_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network convolutional_network_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Expected 4-dimensional input for 4-dimensional weight [6, 3, 5, 5], but got 2-dimensional input of size [1, 784] instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_relu_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_relu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network small_fully_connected_relu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_relu_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network convolutional_network_relu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Expected 4-dimensional input for 4-dimensional weight [6, 1, 5, 5], but got 2-dimensional input of size [1, 784] instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Expected 4-dimensional input for 4-dimensional weight [6, 3, 5, 5], but got 2-dimensional input of size [1, 784] instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --network fully_connected_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_crelu_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network convolutional_network_crelu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Expected 4-dimensional input for 4-dimensional weight [6, 3, 5, 5], but got 2-dimensional input of size [1, 784] instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_relu_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_relu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_relu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_relu_gates --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network convolutional_network_relu --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Expected 4-dimensional input for 4-dimensional weight [6, 1, 5, 5], but got 2-dimensional input of size [1, 784] instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 191, in start
+    output = self.learner.predict(input)
+  File "/workspace/upgd/core/learner/learner.py", line 19, in predict
+    output = self.network(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/workspace/.upgd/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 443, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Expected 4-dimensional input for 4-dimensional weight [6, 3, 5, 5], but got 2-dimensional input of size [1, 784] instead
+ 
+
+python3 core/run/run.py --task input_permuted_mnist --learner adam --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run.py", line 279, in <module>
+    run.start()
+  File "core/run/run.py", line 214, in start
+    loss=loss
+  File "core/run/run.py", line 111, in compute_weight_over_grad_norms
+    layer_weight_grad_norms[name] = weight_grad_norm.item()
+AttributeError: 'list' object has no attribute 'item'
+ 
+

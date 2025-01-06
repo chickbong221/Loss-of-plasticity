@@ -15,3 +15,8 @@ python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 
 python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 76986.68988108635 
 python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network fully_connected_tanh --n_samples 1000000 time_elapsed: 52748.06597852707 
 python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_leakyrelu_gates --n_samples 1000000 time_elapsed: 68025.8755877018 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network small_fully_connected_tanh --n_samples 1000000 time_elapsed: 52723.32677412033 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh --n_samples 1000000 time_elapsed: 62514.043484926224 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network small_fully_connected_tanh --n_samples 1000000 time_elapsed: 42496.238862752914 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --network fully_connected_tanh_gates --n_samples 1000000 time_elapsed: 95330.01007246971 
+python3 core/run/run.py --task input_permuted_mnist --learner sgd --seed 0 --lr 0.001 --weight_decay 0.01 --network fully_connected_tanh_gates --n_samples 1000000 time_elapsed: 65668.276055336 
